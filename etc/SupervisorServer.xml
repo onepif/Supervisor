@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<active_group>Master</active_group>
+	<autostart>true</autostart>
+	<databases>
+		<database1 id="DB1">
+			<driver>QOCI</driver>
+			<host>127.0.0.1</host>
+			<name>XE</name>
+			<password>aero</password>
+			<port>1521</port>
+			<user>aero</user>
+		</database1>
+		<database2 id="DB2">
+			<driver>QOCI</driver>
+			<host>192.168.67.52</host>
+			<name>XE</name>
+			<password>aero</password>
+			<port>1521</port>
+			<user>aero</user>
+		</database2>
+	</databases>
+	<groups>
+		<group0 visualName="Multifunctional Simulator" id="IMF">
+			<process1 order="1">time</process1>
+			<process2 order="2">imitator</process2>
+			<process3 order="3">e1ss</process3>
+			<process4 order="4">yoursender</process4>
+			<process5 order="5">vgrabber</process5>
+		</group0>
+		<group1 visualName="Master" id="MASTER">
+			<process1 order="1">time</process1>
+			<process2 order="2">master</process2>
+			<process3 order="3">vgrabber</process3>
+		</group1>
+		<group2 visualName="Master Hot Rsrv" id="MASTERHR">
+			<process1 order="1">time</process1>
+			<process2 order="2">master</process2>
+			<process3 order="3">dbsync</process3>
+			<process4 order="4">vgrabber</process4>
+		</group2>
+		<group3 visualName="SMAR-T Recorder" id="RECORDER">
+			<process1 order="1">time</process1>
+			<process2 order="2">recorder</process2>
+		</group3>
+		<group4 visualName="SMAR-T Player" id="PLAYER3">
+			<process1 order="1">time</process1>
+			<process2 order="2">player3</process2>
+		</group4>
+		<group5 visualName="SMAR-T Video Capture block" id="BVZ">
+			<process1 order="1">time</process1>
+			<process2 order="2">vgrabber</process2>
+		</group5>
+		<group6 visualName="Radar Test System" id="RTS">
+			<process1 order="1">time</process1>
+			<process2 order="2">rts</process2>
+		</group6>
+		<group7 visualName="Tachyon" id="TACHYON">
+			<process1 order="1">time</process1>
+			<process2 order="2">tachyon</process2>
+			<process3 order="3">vgrabber</process3>
+		</group7>
+		<group8 visualName="Information Server" id="IS">
+			<process1 order="1">time</process1>
+			<process2 order="2">is</process2>
+		</group8>
+		<group9 visualName="Plane Server" id="PS">
+			<process1 order="1">time</process1>
+			<process2 order="2">avia</process2>
+		</group9>
+		<group10 visualName="Communication block" id="TRS">
+			<process1 order="1">time</process1>
+			<process2 order="2">trs</process2>
+		</group10>
+	</groups>
+	<language>english</language>
+	<log>true</log>
+	<network>
+		<host>0.0.0.0</host>
+		<port>4086</port>
+	</network>
+	<processes>
+		<Player3 id="player3">
+			<description>SMAR-T ARMV</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\Player3.log</log_path>
+			<path>C:\Program Files\Peleng\Player3\Player3.exe</path>
+			<restart>true</restart>
+			<visualName>SMAR-T ARMV</visualName>
+		</Player3>
+		<Recorder id="recorder">
+			<description>SMAR-T ARMZ</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\Recorder.log</log_path>
+			<path>D:\ARMZ\Recorder.exe</path>
+			<arguments>IMPERSONATE</arguments>
+			<restart>true</restart>
+			<visualName>SMAR-T ARMZ</visualName>
+		</Recorder>
+		<BaseSync id="dbsync">
+			<description>Data Base Synchronization</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\DbSync.log</log_path>
+			<path>DbSync.exe</path>
+			<restart>true</restart>
+			<visualName>BaseSync</visualName>
+		</BaseSync>
+		<Master id="master">
+			<description>Master</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\Master.log</log_path>
+			<path>D:\Master\Master.exe</path>
+			<restart>true</restart>
+			<visualName>Master</visualName>
+		</Master>
+		<RTS id="rts">
+			<description>Radar Test System</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\rts.log</log_path>
+			<path>D:\RTS\rts.exe</path>
+			<restart>true</restart>
+			<visualName>RTS</visualName>
+		</RTS>
+		<TACHYON id="tachyon">
+			<description>CEB Tachyon</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\tachyon.log</log_path>
+			<path>C:\Program Files\Peleng\Tachyon\Tachyon.exe</path>
+			<restart>true</restart>
+			<visualName>CEB Tachyon</visualName>
+		</TACHYON>
+		<IS id="is">
+			<description>Information Server</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\is.log</log_path>
+			<path>D:\Server\is.exe</path>
+			<restart>true</restart>
+			<visualName>IS</visualName>
+		</IS>
+		<IMITATOR id="imitator">
+			<description>Digital Radar Simulator (M)</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\imitator.log</log_path>
+			<path>C:\Program Files\Peleng\Imitator\Imitator.exe</path>
+			<restart>true</restart>
+			<visualName>ICV RLK-m</visualName>
+		</IMITATOR>
+		<E1SS id="e1ss">
+			<description>Digital Sound Simulator E1 stream</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\e1ss.log</log_path>
+			<path>C:\Program Files\Peleng\E1SS\E1SS.exe</path>
+			<restart>true</restart>
+			<visualName>E1SS</visualName>
+		</E1SS>
+		<YOURSENDER id="yoursender">
+			<description>YourSender</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\yoursender.log</log_path>
+			<path>C:\Program Files\Peleng\YourSender\YourSender.exe</path>
+			<restart>true</restart>
+			<visualName>YourSender</visualName>
+		</YOURSENDER>
+		<PS id="ps">
+			<description>Plane Server</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\avia.log</log_path>
+			<path>D:\_AVIA\bin\avia.exe</path>
+			<restart>true</restart>
+			<visualName>PS</visualName>
+		</PS>
+		<RAID id="raid">
+			<description>RAID Util</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\IAStorUI.log</log_path>
+			<path>C:\Program Files\Intel\Intel(R) Rapid Storage Technology\IAStorUI.exe</path>
+			<restart>false</restart>
+			<visualName>RAID Util</visualName>
+		</RAID>
+		<VGrabber id="vgrabber">
+			<description>Video Grabber</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\vgrabber.log</log_path>
+			<path>C:\Program Files\Peleng\VGrabber\vgrabber.exe</path>
+			<restart>true</restart>
+			<visualName>Video Grabber</visualName>
+		</VGrabber>
+		<BS id="trs">
+			<description>Communication block</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\bs.log</log_path>
+			<path>C:\Program Files\Peleng\TRS\trs.exe</path>
+			<restart>true</restart>
+			<visualName>Communication block</visualName>
+		</BS>
+		<w32time id="time">
+			<arguments>C:\Windows\w32time.ps1</arguments>
+			<description>time</description>
+			<log_path>C:\ProgramData\Peleng\logfiles\w32time.log</log_path>
+			<path>C:\Windows\System32\WindowsPowerShell\v1.0\PowerShell.exe</path>
+			<restart>false</restart>
+			<visualName>Start service time</visualName>
+		</w32time>
+	</processes>
+	<scripts>
+		<script1>
+			<name>Start soft</name>
+			<path>rc.SS.cmd</path>
+		</script1>
+		<script2>
+			<name>Stop soft</name>
+			<path>stopSS.cmd</path>
+		</script2>
+		<script3>
+			<name>Run as Desktop</name>
+			<path>run_as_desktop.cmd</path>
+		</script3>
+		<script4>
+			<name>Run as programm</name>
+			<path>run_as_programm.cmd</path>
+		</script4>
+		<script5>
+			<name>Restart soft</name>
+			<path>restartSS.cmd</path>
+		</script5>
+		<script6>
+			<name>Reboot</name>
+			<path>reboot.cmd</path>
+		</script6>
+		<script7>
+			<name>PowerOff</name>
+			<path>poweroff.cmd</path>
+		</script7>
+		<script8>
+			<name>Rapid Storage Technology</name>
+			<path>rst.cmd</path>
+		</script8>
+	</scripts>
+	<services>
+<!-->
+Services with special behaviour: FMTP, FDP, ADP.
+	Special flags:
+		- <fdp>true<fdp>
+		- <fmtp>false<fmtp>
+		- <adp>true<adp>
+
+	Example:
+		<fdp_service1 id="FDP-1">
+			<fdp>true<fdp>
+			<name>fdpservice</name>
+		</fdp_service1>
+<!-->
+	</services>
+</root>
