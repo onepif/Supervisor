@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<monitored_hosts>
+		<PS1>
+			<name>Visual name: PS1</name>
+			<host>127.0.0.1</host>
+			<port>4086</port>
+		</PS1>
+	</monitored_hosts>
+	<reconnection_timeout>10</reconnection_timeout>
+	<log>true</log>
+        <font>
+                <bold>true</bold>
+                <family>Tahoma</family>
+                <size>14</size>
+        </font>
+        <event_list_size>30</event_list_size>
+	<simplified_view>false</simplified_view>
+        <language>russian</language>
+        <alert>zulu_ru.wav</alert>
+</root>
